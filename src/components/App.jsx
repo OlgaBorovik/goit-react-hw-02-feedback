@@ -53,9 +53,9 @@ class App extends React.Component{
             <div>
                 <div>
                     <h2>Please leave feedback</h2>
-              <FeedbackOptions
+              {/* <FeedbackOptions
                 options={ }
-                onLeaveFeedback={ } />
+                onLeaveFeedback={ } /> */}
                 </div>
             <Statistics
               good={this.state.good}
