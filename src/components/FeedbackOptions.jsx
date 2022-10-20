@@ -1,12 +1,21 @@
+// import { render } from "@testing-library/react";
 import React from "react";
 // import PropTypes from 'prop-types'
 
-export const FeedbackOptions = () => {
+function FeedbackOptions({options, onLeaveFeedback}) {
     return (
-        <div> 
-            <button type='button' onClick={this.incrementGood}>Good</button>
-            <button type='button' onClick={this.incrementNeutral} >Neutral</button>
-            <button type='button' onClick={this.incrementBad}>Bad</button>
-        </div>
+        <ul> 
+            {options.map((option) => (
+                <button
+                    key={option}
+                    onClick={onLeaveFeedback}
+                    data-active={option}
+                    type='button'>{option}</button>
+                )
+            )}
+        </ul>
     )
 }
+
+
+export default FeedbackOptions

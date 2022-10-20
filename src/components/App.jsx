@@ -1,6 +1,6 @@
 import React from "react"
 import { Statistics } from "./Statistics"
-import { FeedbackOptions } from "./FeedbackOptions"
+import  FeedbackOptions  from "./FeedbackOptions"
 
 class App extends React.Component{
 
@@ -11,30 +11,10 @@ class App extends React.Component{
         
     }
 
-    // handleIncrement = (event) => {
-    //     this.setState(prevState => ({
-    //         good: 0,
-    //     neutral: 0,
-    //     bad: 0
-    //     }))
-    // }
-
-    incrementGood = (event) => {
+    onLeaveFeedback = (event) => {
+        const activeBtn = event.target.dataset.active
         this.setState(prevState => ({
-            good: prevState.good + 1,
-           
-        }))
-    }
-    incrementNeutral = () => {
-        this.setState(prevState => ({
-            neutral: prevState.neutral + 1,
-           
-        }))
-    }
-    incrementBad = () => {
-        this.setState(prevState => ({
-            bad: prevState.bad + 1,
-            
+            [activeBtn]: prevState[activeBtn] + 1,
         }))
     }
 
@@ -53,9 +33,10 @@ class App extends React.Component{
             <div>
                 <div>
                     <h2>Please leave feedback</h2>
-              {/* <FeedbackOptions
-                options={ }
-                onLeaveFeedback={ } /> */}
+                <FeedbackOptions
+                    options={Object.keys(this.state)}
+                    onLeaveFeedback = {this.onLeaveFeedback}
+                />
                 </div>
             <Statistics
               good={this.state.good}
