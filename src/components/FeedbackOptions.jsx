@@ -1,6 +1,5 @@
-// import { render } from "@testing-library/react";
 import React from "react";
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 function FeedbackOptions({options, onLeaveFeedback}) {
     return (
@@ -15,6 +14,12 @@ function FeedbackOptions({options, onLeaveFeedback}) {
             )}
         </ul>
     )
+}
+
+FeedbackOptions.propType = {
+    options: PropTypes.array.isRequired,
+    onLeaveFeedback: PropTypes.func.isRequired
+    
 }
 
 
