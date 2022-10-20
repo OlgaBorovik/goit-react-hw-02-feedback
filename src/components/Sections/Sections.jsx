@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types'
+import {SectionBox} from "./Section.styled"
 
 export const Section = (props) => (
-<section>
+<SectionBox>
         <h2>{props.title}</h2>
         {props.children}
- </section>
+ </SectionBox>
 )
 
 
